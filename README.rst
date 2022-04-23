@@ -1,4 +1,4 @@
-My Interviews Python
+My Interview coding exercises in Python
 ====================
 
 |PyPI| |Status| |Python Version| |License|
@@ -39,14 +39,24 @@ My Interviews Python
 Features
 --------
 
-* TODO
+This is second fresh attempt to study Computer Algorithms and Data Structures by following the
+[MIT Course](https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb).
 
+In this repository I'm using Python, in order to also gain some practice!
 
-Requirements
-------------
+# Algorithms
 
-* TODO
+## Arrays and Matrices
+* [Finding a peak in 1-dimensional and 2-dimensional arrays](./docs/interviews/FindPeak.md).
+* Merge of N arrays (lists)
 
+## Graphs
+* Breadth-first Traversal (BFT)
+
+# Data structures
+
+* Heap (actually MaxHeap)
+* Graph (using adjacency lists for its implementation)
 
 Installation
 ------------
