@@ -1,5 +1,5 @@
 My Interview coding exercises in Python
-====================
+=======================================
 
 |PyPI| |Status| |Python Version| |License|
 
@@ -35,28 +35,35 @@ My Interview coding exercises in Python
    :target: https://github.com/psf/black
    :alt: Black
 
-
-Features
---------
+Disclaimer
+----------
 
 This is second fresh attempt to study Computer Algorithms and Data Structures by following the
 [MIT Course](https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb).
 
 In this repository I'm using Python, in order to also gain some practice!
 
-# Algorithms
+This is a set of conding exercises that I have done for testing my coding skills for 
+interview preparation using Python.
+I try to make them as good as possible but I take no responsibility for any problems 
+or errors you may incur if you try to use them :)
 
-## Arrays and Matrices
+Features
+--------
+
+Arrays and Matrices
+~~~~~~~~~~~~~~~~~~~
 * [Finding a peak in 1-dimensional and 2-dimensional arrays](./docs/interviews/FindPeak.md).
 * Merge of N arrays (lists)
 
-## Graphs
+Graphs
+~~~~~~
+* Graph (using adjacency lists for its implementation)
 * Breadth-first Traversal (BFT)
 
-# Data structures
-
-* Heap (actually MaxHeap)
-* Graph (using adjacency lists for its implementation)
+Heap
+~~~~
+* MaxHeap and basic operations
 
 Installation
 ------------
