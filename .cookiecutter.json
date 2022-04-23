@@ -1,0 +1,12 @@
+{
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Mario Scalas",
+  "development_status": "Development Status :: 2 - Pre-Alpha",
+  "email": "mario.scalas@gmail.com",
+  "friendly_name": "My Interviews Python",
+  "github_user": "scalasm",
+  "license": "MIT",
+  "package_name": "interviews",
+  "project_name": "my-interviews-python",
+  "version": "0.0.0"
+}
