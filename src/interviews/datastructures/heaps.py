@@ -1,5 +1,10 @@
 import logging
-from typing import Generic, List, Optional, TypeVar
+from typing import cast
+from typing import Generic
+from typing import List
+from typing import Optional
+from typing import TypeVar
+
 
 # Generic data type per items in a data page
 T = TypeVar("T")
@@ -32,12 +37,15 @@ class MaxHeap(Generic[T]):
         self._data.append(item)
         self._bubble_top(self.size() - 1)
 
-    def max(self) -> T:
-        """Returns the current max item"""
+    def max(self) -> Optional[T]:
+        """Returns the current max item or None if the heap is empty"""
         return self._get_value_at(0)
 
-    def extract(self) -> T:
-        """Returns the current max item and removes it from the heap"""
+    def extract(self) -> Optional[T]:
+        """
+        Returns the current max item and removes it from the heap.
+        It will return None is the ehap is empty.
+        """
         if self.size() == 0:
             return None
 
@@ -45,7 +53,7 @@ class MaxHeap(Generic[T]):
 
         return root_value
 
-    def remove(self, item: T) -> T:
+    def remove(self, item: T) -> Optional[T]:
         """
         Removes the specified item from the heap (in whatever position it is).
         Note that this implementation will only remove the first occurrence
@@ -66,7 +74,7 @@ class MaxHeap(Generic[T]):
 
         return self._remove_item_at_index(item_index)
 
-    def _remove_item_at_index(self, item_index: int) -> T:
+    def _remove_item_at_index(self, item_index: int) -> Optional[T]:
         # swap the item to be removed with the last one, resize the array
         # and then heapify the sub-heap
         item = self._get_value_at(item_index)
@@ -83,27 +91,27 @@ class MaxHeap(Generic[T]):
         """Returns the number of items in this heap"""
         return len(self._data)
 
-    def _heapify(self, i: int) -> None:
-        root = self._get_value_at(i)
-        if not root:
+    def _heapify(self, this_node_index: int) -> None:
+        this_node_value = self._get_value_at(this_node_index)
+        if not this_node_value:
             return
 
-        left_index = 2 * i + 1
-        right_index = 2 * i + 2
+        left_index = 2 * this_node_index + 1
+        right_index = 2 * this_node_index + 2
 
-        logging.info(f"_heapify({i}, {left_index}, {right_index}")
+        logging.info(f"_heapify({this_node_index}, {left_index}, {right_index}")
 
         left_value = self._get_value_at(left_index)
         right_value = self._get_value_at(right_index)
 
         if left_value:
-            if root < left_value:
-                self._swap(i, left_index)
+            if this_node_value < left_value:  # type: ignore
+                self._swap(this_node_index, left_index)
             self._heapify(left_index)
 
         if right_value:
-            if root < right_value:
-                self._swap(i, right_index)
+            if this_node_value < right_value:  # type: ignore
+                self._swap(this_node_index, right_index)
             self._heapify(right_index)
 
     def _bubble_top(self, i: int) -> None:
@@ -114,11 +122,11 @@ class MaxHeap(Generic[T]):
         swapped = True
         while i > 0 and swapped:
             root_index = (i - 1) // 2
-            root_value = self._get_value_at(root_index)
+            root_value = cast(T, self._get_value_at(root_index))
 
-            this_value = self._get_value_at(i)
+            this_value = cast(T, self._get_value_at(i))
 
-            if this_value > root_value:
+            if this_value > root_value:  # type: ignore
                 self._swap(i, root_index)
                 i = root_index
             else:

@@ -43,9 +43,9 @@ This is second fresh attempt to study Computer Algorithms and Data Structures by
 
 In this repository I'm using Python, in order to also gain some practice!
 
-This is a set of conding exercises that I have done for testing my coding skills for 
+This is a set of conding exercises that I have done for testing my coding skills for
 interview preparation using Python.
-I try to make them as good as possible but I take no responsibility for any problems 
+I try to make them as good as possible but I take no responsibility for any problems
 or errors you may incur if you try to use them :)
 
 Features

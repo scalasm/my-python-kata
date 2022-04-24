@@ -1,14 +1,17 @@
+from typing import Any
 from typing import List
+
 import pytest
 
+from ..algorithms.graph_test_support import COMPLEX_GRAPH
+from ..algorithms.graph_test_support import SIMPLE_GRAPH_DIRECTED
 from interviews.datastructures.graphs import Graph
-from ..algorithms.graph_test_support import COMPLEX_GRAPH, SIMPLE_GRAPH_DIRECTED
 
-test_connect = [(["a", []], 1), (["a", ["b", "c"]], 3)]
+test_size_data = [(["a", []], 1), (["a", ["b", "c"]], 3)]
 
 
-@pytest.mark.parametrize("data,expected_size", test_connect)
-def test_size_data(data: List, expected_size: int) -> None:
+@pytest.mark.parametrize("data,expected_size", test_size_data)
+def test_size(data: List[Any], expected_size: int) -> None:
     graph = Graph[str]()
 
     source_item: str = data[0]

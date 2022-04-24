@@ -1,7 +1,12 @@
-from typing import List, Optional
+from typing import cast
+from typing import List
+from typing import Optional
+
 import pytest
 
-from interviews.algorithms.find_peak import Peak2D, find_peak_1D, find_peak_2D
+from interviews.algorithms.find_peak import find_peak_1D
+from interviews.algorithms.find_peak import find_peak_2D
+from interviews.algorithms.find_peak import Peak2D
 
 find_peak_1D_test_data = [
     ([1, 2, 3, 0], 2, 3),
@@ -55,16 +60,19 @@ find_peak_2D_test_data = [
     "array2D,expected_peak_position,expectected_peak_value", find_peak_2D_test_data
 )
 def test_find_peak_2D(
-    array2D, expected_peak_position: Peak2D, expectected_peak_value: int
+    array2D: List[List[int]],
+    expected_peak_position: Peak2D,
+    expectected_peak_value: int,
 ) -> None:
     peak_position: Optional[Peak2D] = find_peak_2D(array2D)
 
     assert peak_position == expected_peak_position
 
     if peak_position is not None:
-        assert (
-            array2D[peak_position.row][peak_position.column] == expectected_peak_value
-        )
+        row = cast(int, peak_position.row)
+        column = cast(int, peak_position.column)
+
+        assert array2D[row][column] == expectected_peak_value
 
 
 peak2D_test_data = [
@@ -73,6 +81,8 @@ peak2D_test_data = [
     (Peak2D(1, 2), Peak2D(2, 2), False),
     (Peak2D(2, 1), Peak2D(2, 2), False),
     (None, Peak2D(2, 2), False),
+    (Peak2D(None, None), Peak2D(2, 2), False),
+    (Peak2D(None, None), Peak2D(None, None), True),
 ]
 
 

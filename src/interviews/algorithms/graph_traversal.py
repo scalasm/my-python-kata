@@ -1,11 +1,19 @@
+from typing import Callable
+from typing import List
+from typing import Set
+from typing import TypeVar
+
 from interviews.datastructures.graphs import Graph
-from typing import List, Set, TypeVar, Callable
 
 # Generic type for the Graph class
 T = TypeVar("T")
 
 
-def bft(graph: Graph[T], start_node: T, on_node_action: Callable[[T], bool]) -> None:
+# Action callback is provided for customizing behavior when visiting nodes
+GraphActionCallback = Callable[[T], bool]
+
+
+def bft(graph: Graph[T], start_node: T, on_node_action: GraphActionCallback) -> None:
     """
     Performs Breadth-First Traversal of the given graph, starting from the specified node
     and performing the specified action.

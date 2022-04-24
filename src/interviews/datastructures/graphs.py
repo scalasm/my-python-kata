@@ -1,6 +1,9 @@
 # Generic data type per items in a data page
 import collections
-from typing import Dict, Generic, List, TypeVar
+from typing import Dict
+from typing import Generic
+from typing import List
+from typing import TypeVar
 
 # Generic type for the Graph class
 T = TypeVar("T")
@@ -16,7 +19,9 @@ class Graph(Generic[T]):
        e.g., we use lists for storing nodes even if checking that there are no
        duplicates nodes at build time is more expensive that using a set.
        Using a list is more efficient when traversing the graph instead of
-       using a set (you usually iterate on all connected nodes anyway).
+       using a set (you usually iterate on all connected nodes anyway).\n\n
+    Note that the generic type T must respect the Comparable contract and support
+    <, >, and == operators.
     """
 
     _nodes_by_id: Dict[T, List[T]]
@@ -25,7 +30,7 @@ class Graph(Generic[T]):
         self._nodes_by_id = collections.defaultdict(list)
 
     def connect(
-        self, source_node: T, target_nodes=List[T], bidirectional: bool = True
+        self, source_node: T, target_nodes: List[T], bidirectional: bool = True
     ) -> None:
         """
         Connect a not to a other nodes.
@@ -47,7 +52,7 @@ class Graph(Generic[T]):
                 if source_node not in target_node_connected_nodes:
                     target_node_connected_nodes.append(source_node)
 
-    def is_arc_present(self, source_node: str, target_node: str) -> bool:
+    def is_arc_present(self, source_node: T, target_node: T) -> bool:
         """
         Checks if two nodes are connected, assuming a directional connection
         (that is, if "source_node --> target_node", not viceversa).

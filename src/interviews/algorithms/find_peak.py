@@ -1,9 +1,11 @@
 from dataclasses import dataclass
-from typing import List, Optional
+from typing import cast
+from typing import List
+from typing import Optional
 
 # Findind a peak in 1-dimensional and 2-dimensional arrays.
 # For 1-dimensional arrays, complexity is O(lg2n)
-# For 2-dimnensional arrays, complexity is O(rows*lg2Columns)
+# For 2-dimensional arrays, complexity is O(rows*lg2Columns)
 
 
 def find_peak_1D(array: List[int]) -> Optional[int]:
@@ -34,8 +36,8 @@ def _find_peak_1D(array: List[int], start: int, end: int) -> Optional[int]:
 class Peak2D:
     """Value object for containing the 2D coordinates of a peak"""
 
-    row: int
-    column: int
+    row: Optional[int]
+    column: Optional[int]
 
 
 def find_peak_2D(array2D: List[List[int]]) -> Optional[Peak2D]:
@@ -54,7 +56,7 @@ def _find_peak_2D(
 ) -> Optional[Peak2D]:
     middleRow: int = (startRow + endRow) // 2
 
-    maxValueCol = find_peak_1D(array2D[middleRow])
+    maxValueCol: int = cast(int, find_peak_1D(array2D[middleRow]))
 
     # left bigger than current, go left
     if (

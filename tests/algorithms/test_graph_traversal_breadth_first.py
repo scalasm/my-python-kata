@@ -1,9 +1,13 @@
 from typing import Set
+
 import pytest
 
-from interviews.datastructures.graphs import Graph
+from .graph_test_support import COMPLEX_GRAPH
+from .graph_test_support import EMPTY_GRAPH
+from .graph_test_support import ONE_NODE_GRAPH
+from .graph_test_support import SIMPLE_GRAPH
 from interviews.algorithms.graph_traversal import bft
-from .graph_test_support import EMPTY_GRAPH, SIMPLE_GRAPH, COMPLEX_GRAPH, ONE_NODE_GRAPH
+from interviews.datastructures.graphs import Graph
 
 test_bft_data = [
     (EMPTY_GRAPH, "0", True, set()),
