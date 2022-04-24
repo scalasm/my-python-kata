@@ -13,7 +13,7 @@ T = TypeVar("T")
 GraphActionCallback = Callable[[T], bool]
 
 
-def bft(graph: Graph[T], start_node: T, on_node_action: GraphActionCallback) -> None:
+def bft(graph: Graph[T], start_node: T, on_node_action: GraphActionCallback[T]) -> None:
     """
     Performs Breadth-First Traversal of the given graph, starting from the specified node
     and performing the specified action.
