@@ -1,3 +1,4 @@
+"""Graph traversal algorithms."""
 from typing import Callable
 from typing import List
 from typing import Set
@@ -14,7 +15,8 @@ GraphActionCallback = Callable[[T], bool]
 
 
 def bft(graph: Graph[T], start_node: T, on_node_action: GraphActionCallback[T]) -> None:
-    """
+    """Breadt-First traversal.
+
     Performs Breadth-First Traversal of the given graph, starting from the
     specified node and performing the specified action.
 
@@ -22,9 +24,9 @@ def bft(graph: Graph[T], start_node: T, on_node_action: GraphActionCallback[T]) 
     False if they want to stop after processing the current node.
 
     Args:
-        - graph - the graph to be processed
-        - start_node - the node to start traversal from
-        - on_node_action - a callback that will be invoked on each traversal.
+        graph: the graph to be processed
+        start_node: the node to start traversal from
+        on_node_action: a callback that will be invoked on each traversal.
     """
     if not graph.contains(start_node):
         return

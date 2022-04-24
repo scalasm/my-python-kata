@@ -1,3 +1,4 @@
+"""Unit tests for arrays merge."""
 from typing import List
 
 import pytest
@@ -35,4 +36,5 @@ merge_arrays_test_data = [
 def test_merge_arrays(
     arrays: List[List[int]], expected_result_array: List[int]
 ) -> None:
+    """Test that merging works."""
     assert merge_arrays(arrays) == expected_result_array

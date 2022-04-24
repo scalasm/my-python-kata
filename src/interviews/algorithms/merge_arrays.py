@@ -1,3 +1,4 @@
+"""Module that exposes how to merge two lists into one single list."""
 from typing import List
 
 

@@ -1,6 +1,4 @@
-"""
-Shared test resources for testing graphs and related traversal algorithms.
-"""
+"""Shared test resources for testing graphs and related traversal algorithms."""
 from interviews.datastructures.graphs import Graph
 
 

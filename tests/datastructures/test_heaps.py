@@ -1,3 +1,4 @@
+"""Unit tests for the heap module."""
 from typing import List
 
 import pytest
@@ -16,6 +17,7 @@ max_heap_heapify_test_data = [
 
 @pytest.mark.parametrize("data,expected_state", max_heap_heapify_test_data)
 def test_max_heap_heapify(data: List[int], expected_state: List[int]) -> None:
+    """Test construction of a new heap given an initial list of elements."""
     heap = MaxHeap[int](data)
 
     assert heap._data == expected_state
@@ -32,6 +34,7 @@ max_heap_insert_test_data = [
 
 @pytest.mark.parametrize("data,new_item,expected_state", max_heap_insert_test_data)
 def test_insert(data: List[int], new_item: int, expected_state: List[int]) -> None:
+    """Test insertion (addition) of a new item to the heap."""
     heap = MaxHeap[int](data)
 
     heap.insert(new_item)
@@ -50,6 +53,7 @@ max_heap_max_value_test_data = [
 
 @pytest.mark.parametrize("data,expected_max_item", max_heap_max_value_test_data)
 def test_max(data: List[int], expected_max_item: int) -> None:
+    """Test reading the max (top-most) element."""
     heap = MaxHeap[int](data)
 
     assert heap.max() == expected_max_item
@@ -66,6 +70,7 @@ max_heap_size_test_data = [
 
 @pytest.mark.parametrize("data,expected_size", max_heap_size_test_data)
 def test_size(data: List[int], expected_size: int) -> None:
+    """Test heap size."""
     heap = MaxHeap[int](data)
 
     assert heap.size() == expected_size
@@ -86,6 +91,7 @@ max_heap_extract_test_data = [
 def test_extract(
     data: List[int], expected_extracted_item: int, expected_next_max_item: int
 ) -> None:
+    """Test removal of the max (top-most) element."""
     heap = MaxHeap[int](data)
 
     assert heap.extract() == expected_extracted_item
@@ -113,6 +119,7 @@ def test_remove(
     expected_removed_item: int,
     expected_state: List[int],
 ) -> None:
+    """Test removal of an arbitrary item from the heap."""
     heap = MaxHeap[int](data)
 
     assert heap.remove(item_to_remove) == expected_removed_item

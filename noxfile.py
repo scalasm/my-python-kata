@@ -212,16 +212,16 @@ locations = "src", "tests", "noxfile.py"
 
 # noxfile.py
 @nox.session(python="3.10")
-def black(session):
-    """Format code according to Black configuration"""
+def black(session: Session) -> None:
+    """Format code according to Black configuration."""
     args = session.posargs or locations
     session.install("black")
     session.run("black", *args)
 
 
 @nox.session(python=["3.10"])
-def lint(session):
-    """Run Flake8 linting"""
+def lint(session: Session) -> None:
+    """Run Flake8 linting."""
     args = session.posargs or locations
     session.install("flake8", "flake8-black", "flake8-bugbear", "flake8-import-order")
     session.run("flake8", *args)

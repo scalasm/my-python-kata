@@ -1,3 +1,4 @@
+"""Heap data-structures."""
 import logging
 from typing import cast
 from typing import Generic
@@ -11,9 +12,10 @@ T = TypeVar("T")
 
 
 class MaxHeap(Generic[T]):
-    """
-    A Max heap is a binary tree that ensure that the root element is always
-    bigger that his children, for any given subtree.
+    """A Max heap is a binary tree that enforce Max heap property.
+
+    This means that the root element is always bigger that his children,
+    for any given subtree.
 
     Insertion and extraction are performed in O(lg2 n).
 
@@ -24,26 +26,31 @@ class MaxHeap(Generic[T]):
     _data: List[T] = []
 
     def __init__(self, data: List[T]) -> None:
+        """Construct a new heap from the initial list of elements.
+
+        Args:
+            data: the list of initial elements for the heap.
+
+        """
         self._data = data.copy()
         self._heapify(0)
 
     def insert(self, item: T) -> None:
-        """
-        Insert a new iterm in the heap.
+        """Insert a new iterm in the heap.
 
         Args:
-            item - the item to add
+            item: the item to add
         """
         self._data.append(item)
         self._bubble_top(self.size() - 1)
 
     def max(self) -> Optional[T]:
-        """Returns the current max item or None if the heap is empty"""
+        """Returns the current max item or None if the heap is empty."""
         return self._get_value_at(0)
 
     def extract(self) -> Optional[T]:
-        """
-        Returns the current max item and removes it from the heap.
+        """Returns the current max item and removes it from the heap.
+
         It will return None is the ehap is empty.
         """
         if self.size() == 0:
@@ -54,12 +61,13 @@ class MaxHeap(Generic[T]):
         return root_value
 
     def remove(self, item: T) -> Optional[T]:
-        """
-        Removes the specified item from the heap (in whatever position it is).
+        """Removes the specified item from the heap.
+
         Note that this implementation will only remove the first occurrence
         and not deal with any duplicates.
+
         Args:
-            item - the item to remove
+            item: the item to remove
 
         Returns:
             the removed item or None if no such item was found
@@ -88,7 +96,7 @@ class MaxHeap(Generic[T]):
         return item
 
     def size(self) -> int:
-        """Returns the number of items in this heap"""
+        """Returns the number of items in this heap."""
         return len(self._data)
 
     def _heapify(self, this_node_index: int) -> None:

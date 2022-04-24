@@ -1,3 +1,4 @@
+"""Unit tests for the graphs module."""
 from typing import Any
 from typing import List
 
@@ -12,6 +13,7 @@ test_size_data = [(["a", []], 1), (["a", ["b", "c"]], 3)]
 
 @pytest.mark.parametrize("data,expected_size", test_size_data)
 def test_size(data: List[Any], expected_size: int) -> None:
+    """Test size()."""
     graph = Graph[str]()
 
     source_item: str = data[0]
@@ -46,6 +48,7 @@ test_connect_data = [
 def test_connect(
     graph: Graph[str], source: str, target: str, expected_is_connected: bool
 ) -> None:
+    """Ensure that is_arc_present() function is correct."""
     assert graph.is_arc_present(source, target) == expected_is_connected
 
 
@@ -63,6 +66,7 @@ test_get_connected_nodes_data = [
 def test_get_connected_nodes(
     graph: Graph[str], source: str, expected_connected_nodes: List[str]
 ) -> None:
+    """Test that get_connected_nodes() function returns that expected nodes."""
     assert graph.get_connected_nodes(source) == expected_connected_nodes
 
 
@@ -74,4 +78,5 @@ test_contains_data = [
 
 @pytest.mark.parametrize("graph,node,expected_contained", test_contains_data)
 def test_contains(graph: Graph[str], node: str, expected_contained: bool) -> None:
+    """Check that contains() function is correct."""
     assert graph.contains(node) == expected_contained

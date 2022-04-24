@@ -1,3 +1,4 @@
+"""Find peaks in unidimensional and bidimensional arrays."""
 from dataclasses import dataclass
 from typing import cast
 from typing import List
@@ -9,10 +10,10 @@ from typing import Optional
 
 
 def find_peak_1d(array: List[int]) -> Optional[int]:
-    """
-    Find any peak in the 1-dimensional array. By definition, an array "a"
-    contains a peak only if, for a given element at position "i", we have
-    that a[i] >= a[i-1] and a[i] >= a[i+1].
+    """Find any peak in the 1-dimensional array.
+
+    By definition, an array "a" contains a peak only if, for a given element
+    at position "i", we have that a[i] >= a[i-1] and a[i] >= a[i+1].
     """
     if not array:
         return None
@@ -35,42 +36,45 @@ def _find_peak_1d(array: List[int], start: int, end: int) -> Optional[int]:
 
 @dataclass
 class Peak2D:
-    """Value object for containing the 2D coordinates of a peak"""
+    """Value object for containing the 2D coordinates of a peak."""
 
     row: Optional[int]
     column: Optional[int]
 
 
-def find_peak_2d(array2D: List[List[int]]) -> Optional[Peak2D]:
-    """
+def find_peak_2d(array_2d: List[List[int]]) -> Optional[Peak2D]:
+    """Find a peak in a bidimensional array.
+
     In a matrix, there is a peak if and only if, given an element (i,j),
     the elements respectively on top, bottom, left and right are all
     less or equal than (i,j).
     """
-    if not array2D or not array2D[0]:
+    if not array_2d or not array_2d[0]:
         return None
 
-    return _find_peak_2d(array2D, 0, len(array2D))
+    return _find_peak_2d(array_2d, 0, len(array_2d))
 
 
 def _find_peak_2d(
-    array2D: List[List[int]], startRow: int, endRow: int
+    array_2d: List[List[int]], start_row: int, end_row: int
 ) -> Optional[Peak2D]:
-    middleRow: int = (startRow + endRow) // 2
+    middle_row: int = (start_row + end_row) // 2
 
-    maxValueCol: int = cast(int, find_peak_1d(array2D[middleRow]))
+    max_value_col: int = cast(int, find_peak_1d(array_2d[middle_row]))
 
     # left bigger than current, go left
     if (
-        middleRow > 0
-        and array2D[middleRow - 1][maxValueCol] > array2D[middleRow][maxValueCol]
+        middle_row > 0
+        and array_2d[middle_row - 1][max_value_col]
+        > array_2d[middle_row][max_value_col]
     ):
-        return _find_peak_2d(array2D, startRow, middleRow - 1)
+        return _find_peak_2d(array_2d, start_row, middle_row - 1)
 
     if (
-        middleRow < len(array2D) - 1
-        and array2D[middleRow + 1][maxValueCol] > array2D[middleRow][maxValueCol]
+        middle_row < len(array_2d) - 1
+        and array_2d[middle_row + 1][max_value_col]
+        > array_2d[middle_row][max_value_col]
     ):
-        return _find_peak_2d(array2D, middleRow + 1, endRow)
+        return _find_peak_2d(array_2d, middle_row + 1, end_row)
 
-    return Peak2D(middleRow, maxValueCol)
+    return Peak2D(middle_row, max_value_col)

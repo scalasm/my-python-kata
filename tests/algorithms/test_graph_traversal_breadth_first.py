@@ -1,3 +1,4 @@
+"""Unit tests for graph Breadth-First graph traversal."""
 from typing import Set
 
 import pytest
@@ -38,6 +39,7 @@ def test_bfs(
     action_return_value: bool,
     expected_visited_nodes: Set[str],
 ) -> None:
+    """Test that Breadth-First Search works correctly."""
     visited_nodes: Set[str] = set()
 
     def track_node(node: str) -> bool:

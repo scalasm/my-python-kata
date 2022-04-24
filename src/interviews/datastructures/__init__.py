@@ -1,1 +1,1 @@
-"""Data structures"""
+"""Data structures."""
