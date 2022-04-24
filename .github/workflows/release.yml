@@ -55,7 +55,7 @@ jobs:
         run: |
           poetry build --ansi
 
-      # Disabled publishing to PyPi since we only want to publish these 
+      # Disabled publishing to PyPi since we only want to publish these
       # - name: Publish package on PyPI
       #   if: steps.check-version.outputs.tag
       #   uses: pypa/gh-action-pypi-publish@v1.4.2
