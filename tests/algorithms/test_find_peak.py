@@ -4,11 +4,11 @@ from typing import Optional
 
 import pytest
 
-from interviews.algorithms.find_peak import find_peak_1D
-from interviews.algorithms.find_peak import find_peak_2D
+from interviews.algorithms.find_peak import find_peak_1d
+from interviews.algorithms.find_peak import find_peak_2d
 from interviews.algorithms.find_peak import Peak2D
 
-find_peak_1D_test_data = [
+find_peak_1d_test_data = [
     ([1, 2, 3, 0], 2, 3),
     ([1, 2], 1, 2),
     ([2, 1], 0, 2),
@@ -20,12 +20,12 @@ find_peak_1D_test_data = [
 
 
 @pytest.mark.parametrize(
-    "array,expected_peak_position,expectected_peak_value", find_peak_1D_test_data
+    "array,expected_peak_position,expectected_peak_value", find_peak_1d_test_data
 )
-def test_find_peak_1D(
+def test_find_peak_1d(
     array: List[int], expected_peak_position: int, expectected_peak_value: int
 ) -> None:
-    peak_position: Optional[int] = find_peak_1D(array)
+    peak_position: Optional[int] = find_peak_1d(array)
 
     assert peak_position == expected_peak_position
 
@@ -33,7 +33,7 @@ def test_find_peak_1D(
         assert array[peak_position] == expectected_peak_value
 
 
-find_peak_2D_test_data = [
+find_peak_2d_test_data = [
     ([[1, 2, 3, 0], [2, 3, 2, 0], [1, 4, 7, 1], [1, 5, 3, 0]], Peak2D(2, 2), 7),
     ([[]], None, None),
     (
@@ -57,14 +57,14 @@ find_peak_2D_test_data = [
 
 
 @pytest.mark.parametrize(
-    "array2D,expected_peak_position,expectected_peak_value", find_peak_2D_test_data
+    "array2D,expected_peak_position,expectected_peak_value", find_peak_2d_test_data
 )
-def test_find_peak_2D(
+def test_find_peak_2d(
     array2D: List[List[int]],
     expected_peak_position: Peak2D,
     expectected_peak_value: int,
 ) -> None:
-    peak_position: Optional[Peak2D] = find_peak_2D(array2D)
+    peak_position: Optional[Peak2D] = find_peak_2d(array2D)
 
     assert peak_position == expected_peak_position
 

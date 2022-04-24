@@ -8,26 +8,27 @@ from typing import Optional
 # For 2-dimensional arrays, complexity is O(rows*lg2Columns)
 
 
-def find_peak_1D(array: List[int]) -> Optional[int]:
+def find_peak_1d(array: List[int]) -> Optional[int]:
     """
-    Find any peak in the 1-dimensional array. By definition, an array "a" contains a peak only if, for a given
-    element at position "i", we have that a[i] >= a[i-1] and a[i] >= a[i+1].
+    Find any peak in the 1-dimensional array. By definition, an array "a"
+    contains a peak only if, for a given element at position "i", we have
+    that a[i] >= a[i-1] and a[i] >= a[i+1].
     """
     if not array:
         return None
-    return _find_peak_1D(array, 0, len(array))
+    return _find_peak_1d(array, 0, len(array))
 
 
-def _find_peak_1D(array: List[int], start: int, end: int) -> Optional[int]:
+def _find_peak_1d(array: List[int], start: int, end: int) -> Optional[int]:
 
     middle: int = (start + end) // 2
 
     # left bigger than current, go left
     if middle > 0 and array[middle - 1] > array[middle]:
-        return _find_peak_1D(array, start, middle - 1)
+        return _find_peak_1d(array, start, middle - 1)
 
     if middle < len(array) - 1 and array[middle + 1] > array[middle]:
-        return _find_peak_1D(array, middle + 1, end)
+        return _find_peak_1d(array, middle + 1, end)
 
     return middle
 
@@ -40,35 +41,36 @@ class Peak2D:
     column: Optional[int]
 
 
-def find_peak_2D(array2D: List[List[int]]) -> Optional[Peak2D]:
+def find_peak_2d(array2D: List[List[int]]) -> Optional[Peak2D]:
     """
-    In a matrix, there is a peak if and only if, given an element (i,j), the elements respectively on top, bottom,
-    left and right are all lesser or equal than (i,j).
+    In a matrix, there is a peak if and only if, given an element (i,j),
+    the elements respectively on top, bottom, left and right are all
+    less or equal than (i,j).
     """
     if not array2D or not array2D[0]:
         return None
 
-    return _find_peak_2D(array2D, 0, len(array2D))
+    return _find_peak_2d(array2D, 0, len(array2D))
 
 
-def _find_peak_2D(
+def _find_peak_2d(
     array2D: List[List[int]], startRow: int, endRow: int
 ) -> Optional[Peak2D]:
     middleRow: int = (startRow + endRow) // 2
 
-    maxValueCol: int = cast(int, find_peak_1D(array2D[middleRow]))
+    maxValueCol: int = cast(int, find_peak_1d(array2D[middleRow]))
 
     # left bigger than current, go left
     if (
         middleRow > 0
         and array2D[middleRow - 1][maxValueCol] > array2D[middleRow][maxValueCol]
     ):
-        return _find_peak_2D(array2D, startRow, middleRow - 1)
+        return _find_peak_2d(array2D, startRow, middleRow - 1)
 
     if (
         middleRow < len(array2D) - 1
         and array2D[middleRow + 1][maxValueCol] > array2D[middleRow][maxValueCol]
     ):
-        return _find_peak_2D(array2D, middleRow + 1, endRow)
+        return _find_peak_2d(array2D, middleRow + 1, endRow)
 
     return Peak2D(middleRow, maxValueCol)
