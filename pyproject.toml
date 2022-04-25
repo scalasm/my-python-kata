@@ -48,7 +48,7 @@ pyupgrade = "^2.29.1"
 furo = ">=2021.11.12"
 Jinja2 = "^3.1.1"
 # Lock this because of https://github.com/PyCQA/bandit/issues/837
-bandit = "=1.7.2"
+bandit = "=1.7.4"
 
 [tool.poetry.scripts]
 my-interviews-python = "interviews.__main__:main"
