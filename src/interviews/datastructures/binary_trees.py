@@ -1,7 +1,7 @@
 """Binary trees."""
 from __future__ import annotations
-
 from dataclasses import dataclass
+from typing import Callable
 from typing import Generic
 from typing import Optional
 from typing import TypeVar
@@ -37,7 +37,7 @@ class Node(Generic[K, V]):
     ) -> None:
         """Build a new node.
 
-        Args
+        Args:
             key: the key for this node
             value: the value of this node (optional)
             left_child: the left node (optional)
@@ -54,6 +54,59 @@ class Node(Generic[K, V]):
         return self._key
 
 
+# Alias for better readability
+ActionCallback = Callable[[Node[K, V]], bool]
+
+
+def _visit_in_order(node: Optional[Node[K, V]], on_node_action: ActionCallback) -> None:
+    """Visit a tree using in-order strategy.
+
+    See https://en.wikipedia.org/wiki/Tree_traversal.
+    """
+    if not node:
+        return
+
+    _visit_in_order(node.left_child, on_node_action)
+
+    on_node_action(node)
+
+    _visit_in_order(node.right_child, on_node_action)
+
+
+def _visit_pre_order(
+    node: Optional[Node[K, V]] | None, on_node_action: ActionCallback
+) -> None:
+    """Visit a tree using pre-order strategy.
+
+    See https://en.wikipedia.org/wiki/Tree_traversal.
+    """
+    if not node:
+        return
+
+    on_node_action(node)
+
+    _visit_in_order(node.left_child, on_node_action)
+
+    _visit_in_order(node.right_child, on_node_action)
+
+
+def _visit_post_order(
+    node: Optional[Node[K, V]], on_node_action: ActionCallback
+) -> None:
+    """Visit a tree using post-order strategy.
+
+    See https://en.wikipedia.org/wiki/Tree_traversal.
+    """
+    if not node:
+        return
+
+    _visit_in_order(node.left_child, on_node_action)
+
+    _visit_in_order(node.right_child, on_node_action)
+
+    on_node_action(node)
+
+
 @dataclass
 class BinaryTree(Generic[K, V]):
     """A Binary tree."""
@@ -63,3 +116,27 @@ class BinaryTree(Generic[K, V]):
     def is_empty(self) -> bool:
         """Checks that this binary tree has at least one node."""
         return self.root is None
+
+    def visit_in_order(self, on_node_action: ActionCallback) -> None:
+        """Visit a tree in order.
+
+        Args:
+            on_node_action: callback invoked for each node
+        """
+        _visit_in_order(self.root, on_node_action)
+
+    def visit_pre_order(self, on_node_action: ActionCallback) -> None:
+        """Visit a tree in pre-order.
+
+        Args:
+            on_node_action: callback invoked for each node
+        """
+        _visit_pre_order(self.root, on_node_action)
+
+    def visit_post_order(self, on_node_action: ActionCallback) -> None:
+        """Visit a tree in post-order.
+
+        Args:
+            on_node_action: callback invoked for each node
+        """
+        _visit_post_order(self.root, on_node_action)
