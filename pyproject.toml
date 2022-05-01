@@ -60,7 +60,7 @@ tests = ["tests", "*/tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["interviews", "tests"]
+source = ["interviews"]
 
 [tool.coverage.report]
 show_missing = true
