@@ -33,7 +33,7 @@ test_bft_data = [
 @pytest.mark.parametrize(
     "graph,start_node,action_return_value,expected_visited_nodes", test_bft_data
 )
-def test_bfs(
+def test_bft(
     graph: Graph[str],
     start_node: str,
     action_return_value: bool,
