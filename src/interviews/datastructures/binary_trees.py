@@ -23,7 +23,7 @@ class Node(Generic[K, V]):
     __slots__ = ["_key", "value", "left_child", "right_child"]
 
     _key: K
-    value: V
+    value: V | None
 
     left_child: Node[K, V] | None
     right_child: Node[K, V] | None
@@ -31,9 +31,9 @@ class Node(Generic[K, V]):
     def __init__(
         self,
         key: K,
-        value: V = None,
-        left_child: Node[K, V] = None,
-        right_child: Node[K, V] = None,
+        value: V | None = None,
+        left_child: Node[K, V] | None = None,
+        right_child: Node[K, V] | None = None,
     ) -> None:
         """Build a new node.
 
@@ -113,9 +113,9 @@ def _visit_post_order(
 class BinaryTree(Generic[K, V]):
     """A Binary tree."""
 
-    root: Node[K, V] = None
+    root: Node[K, V] | None = None
 
-    def __init__(self, root: Node[K, V] = None) -> None:
+    def __init__(self, root: Node[K, V] | None = None) -> None:
         """Creaste a new empty binary tree.
 
         Args:
