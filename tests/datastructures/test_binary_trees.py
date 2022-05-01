@@ -2,6 +2,7 @@
 from typing import Callable
 from typing import List
 from typing import Optional
+from unittest.mock import Mock
 
 import pytest
 from pytest_mock import MockerFixture
@@ -57,7 +58,7 @@ def test_binary_tree_is_empty(tree: TestBinaryTree, expected_is_empty: bool) -> 
 
 
 # Just a shortcut for improving readability
-VisitFunctionType = Callable[[Optional[TestNode], ActionCallback], None]
+VisitFunctionType = Callable[[Optional[TestNode], ActionCallback[str, str]], None]
 
 test_in_order_visit_data = [
     (_visit_in_order, EMPTY_BINARY_TREE.root, []),
@@ -106,7 +107,7 @@ test_binary_tree_inorder_visit_data = [
 @pytest.fixture
 def mock_visit_in_order(
     mocker: MockerFixture,
-) -> VisitFunctionType:
+) -> Mock:
     """Provides a mock for the _visit_in_order() function."""
     return mocker.patch(
         "interviews.datastructures.binary_trees._visit_in_order", return_value=None
@@ -119,7 +120,7 @@ def mock_visit_in_order(
 def test_binary_tree_in_order_visit(
     tree: TestBinaryTree,
     expected_num_visit_calls: int,
-    mock_visit_in_order: VisitFunctionType,
+    mock_visit_in_order: Mock,
 ) -> None:
     """Verify that we call the _visit_in_order function."""
 
@@ -134,7 +135,7 @@ def test_binary_tree_in_order_visit(
 @pytest.fixture
 def mock_visit_pre_order(
     mocker: MockerFixture,
-) -> VisitFunctionType:
+) -> Mock:
     """Provides a mock for the _visit_pre_order() function."""
     return mocker.patch(
         "interviews.datastructures.binary_trees._visit_pre_order", return_value=None
@@ -147,7 +148,7 @@ def mock_visit_pre_order(
 def test_binary_tree_pre_order_visit(
     tree: TestBinaryTree,
     expected_num_visit_calls: int,
-    mock_visit_pre_order: VisitFunctionType,
+    mock_visit_pre_order: Mock,
 ) -> None:
     """Verify that we call the mock_visit_pre_order function."""
 
@@ -162,7 +163,7 @@ def test_binary_tree_pre_order_visit(
 @pytest.fixture
 def mock_visit_post_order(
     mocker: MockerFixture,
-) -> VisitFunctionType:
+) -> Mock:
     """Provides a mock for the _visit_post_order() function."""
     return mocker.patch(
         "interviews.datastructures.binary_trees._visit_post_order", return_value=None
@@ -175,7 +176,7 @@ def mock_visit_post_order(
 def test_binary_tree_post_order_visit(
     tree: TestBinaryTree,
     expected_num_visit_calls: int,
-    mock_visit_post_order: VisitFunctionType,
+    mock_visit_post_order: Mock,
 ) -> None:
     """Verify that we call the mock_visit_post_order function."""
 
