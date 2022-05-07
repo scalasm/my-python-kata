@@ -1,7 +1,6 @@
 """Test support for binary trees."""
 from __future__ import annotations
 
-from typing import Optional
 from interviews.datastructures.binary_trees import Node
 
 TestNode = Node[str, str]
