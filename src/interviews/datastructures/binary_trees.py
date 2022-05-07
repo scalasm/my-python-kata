@@ -17,7 +17,7 @@ V = TypeVar("V")
 class Node(Generic[K, V]):
     """A single node in a binary tree.
 
-    Key is immutable while value can be changed, eventually set to None.
+    Key is immutable while optional value can be changed at runtime.
     """
 
     __slots__ = ["_key", "value", "left_child", "right_child"]
@@ -58,7 +58,7 @@ class Node(Generic[K, V]):
 ActionCallback = Callable[[Node[K, V]], bool]
 
 
-def _visit_in_order(
+def visit_in_order(
     node: Node[K, V] | None, on_node_action: ActionCallback[K, V]
 ) -> None:
     """Visit a tree using in-order strategy.
@@ -68,14 +68,14 @@ def _visit_in_order(
     if not node:
         return
 
-    _visit_in_order(node.left_child, on_node_action)
+    visit_in_order(node.left_child, on_node_action)
 
     on_node_action(node)
 
-    _visit_in_order(node.right_child, on_node_action)
+    visit_in_order(node.right_child, on_node_action)
 
 
-def _visit_pre_order(
+def visit_pre_order(
     node: Node[K, V] | None, on_node_action: ActionCallback[K, V]
 ) -> None:
     """Visit a tree using pre-order strategy.
@@ -87,12 +87,12 @@ def _visit_pre_order(
 
     on_node_action(node)
 
-    _visit_in_order(node.left_child, on_node_action)
+    visit_pre_order(node.left_child, on_node_action)
 
-    _visit_in_order(node.right_child, on_node_action)
+    visit_pre_order(node.right_child, on_node_action)
 
 
-def _visit_post_order(
+def visit_post_order(
     node: Node[K, V] | None, on_node_action: ActionCallback[K, V]
 ) -> None:
     """Visit a tree using post-order strategy.
@@ -102,51 +102,13 @@ def _visit_post_order(
     if not node:
         return
 
-    _visit_in_order(node.left_child, on_node_action)
+    visit_post_order(node.left_child, on_node_action)
 
-    _visit_in_order(node.right_child, on_node_action)
+    visit_post_order(node.right_child, on_node_action)
 
     on_node_action(node)
 
 
-@dataclass
-class BinaryTree(Generic[K, V]):
-    """A Binary tree."""
-
-    root: Node[K, V] | None = None
-
-    def __init__(self, root: Node[K, V] | None = None) -> None:
-        """Creaste a new empty binary tree.
-
-        Args:
-            root: the optional root for this tree
-        """
-        self.root = root
-
-    def is_empty(self) -> bool:
-        """Checks that this binary tree has at least one node."""
-        return self.root is None
-
-    def visit_in_order(self, on_node_action: ActionCallback[K, V]) -> None:
-        """Visit a tree in order.
-
-        Args:
-            on_node_action: callback invoked for each node
-        """
-        _visit_in_order(self.root, on_node_action)
-
-    def visit_pre_order(self, on_node_action: ActionCallback[K, V]) -> None:
-        """Visit a tree in pre-order.
-
-        Args:
-            on_node_action: callback invoked for each node
-        """
-        _visit_pre_order(self.root, on_node_action)
-
-    def visit_post_order(self, on_node_action: ActionCallback[K, V]) -> None:
-        """Visit a tree in post-order.
-
-        Args:
-            on_node_action: callback invoked for each node
-        """
-        _visit_post_order(self.root, on_node_action)
+def is_empty(tree: Node[K, V] | None) -> bool:
+    """Checks that this binary tree has at least one node."""
+    return tree is None
