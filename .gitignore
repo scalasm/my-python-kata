@@ -8,3 +8,6 @@
 /docs/_build/
 /src/*.egg-info/
 __pycache__/
+./cache
+./pytest_cache
+./venv
