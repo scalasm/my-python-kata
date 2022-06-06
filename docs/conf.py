@@ -2,7 +2,7 @@
 from datetime import datetime
 
 
-project = "My Python Kata"
+project = "my_python_kata"
 author = "Mario Scalas"
 copyright = f"{datetime.now().year}, {author}"
 extensions = [

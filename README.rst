@@ -39,21 +39,24 @@ Disclaimer
 ----------
 
 This is second fresh attempt to study Computer Algorithms and Data Structures by following the
-[MIT Course](https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb).
+`MIT Course`_.
 
-In this repository I'm using Python, in order to also gain some practice, like in [Kata](https://en.wikipedia.org/wiki/Kata)!
+.. _MIT Course: https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb
 
-This is a set of conding exercises that I have done for testing my coding skills  using Python.
-I try to make them as good as possible but I take no responsibility for any problems
+In this repository I'm using Python, in order to also gain some practice, like in Kata_ ! I try to make them as good as possible but I take no responsibility for any problems
 or errors you may incur if you try to use them :)
+
+.. _Kata: https://en.wikipedia.org/wiki/Kata
 
 Features
 --------
 
 Arrays and Matrices
 ~~~~~~~~~~~~~~~~~~~
-* [Finding a peak in 1-dimensional and 2-dimensional arrays](./docs/algorithms/FindPeak.md).
+* `Finding peaks in arrays`_, both 1-dimensional and 2-dimensional arrays.
 * Merge of N arrays (lists)
+
+.. _Finding peaks in arrays: ./docs/algorithms/FindPeak.md
 
 Graphs
 ~~~~~~
@@ -64,21 +67,10 @@ Heap
 ~~~~
 * MaxHeap and basic operations
 
-Installation
-------------
-
-You can install *My Python Kata* via pip_ from PyPI_:
-
-.. code:: console
-
-   $ pip install my-python-kata
-
-
 Usage
 -----
 
-Please see the `Command-line Reference <Usage_>`_ for details.
-
+Open this project in Visual Studio Code with remote container extenstion and have fun :)
 
 Contributing
 ------------
