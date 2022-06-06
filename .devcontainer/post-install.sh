@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-## 
+##
 ## Create some aliases
 ##
 echo 'alias ll="ls -alF"' >> $HOME/.bashrc
