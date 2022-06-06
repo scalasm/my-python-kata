@@ -3,5 +3,6 @@
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "python.formatting.provider": "black",
-  "python.linting.pylintEnabled": false
+  "python.linting.pylintEnabled": false,
+  "esbonio.sphinx.confDir": ""
 }
