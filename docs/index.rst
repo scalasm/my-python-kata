@@ -13,4 +13,4 @@
    contributing
    Code of Conduct <codeofconduct>
    License <license>
-   Changelog <https://github.com/scalasm/my-interviews-python/releases>
+   Changelog <https://github.com/scalasm/my-python-kata/releases>

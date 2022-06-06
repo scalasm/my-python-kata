@@ -1,5 +1,5 @@
-My Interview coding exercises in Python
-=======================================
+My coding exercises in Python
+=============================
 
 |PyPI| |Status| |Python Version| |License|
 
@@ -7,26 +7,26 @@ My Interview coding exercises in Python
 
 |pre-commit| |Black|
 
-.. |PyPI| image:: https://img.shields.io/pypi/v/my-interviews-python.svg
-   :target: https://pypi.org/project/my-interviews-python/
+.. |PyPI| image:: https://img.shields.io/pypi/v/my-python-kata.svg
+   :target: https://pypi.org/project/my-python-kata/
    :alt: PyPI
-.. |Status| image:: https://img.shields.io/pypi/status/my-interviews-python.svg
-   :target: https://pypi.org/project/my-interviews-python/
+.. |Status| image:: https://img.shields.io/pypi/status/my-python-kata.svg
+   :target: https://pypi.org/project/my-python-kata/
    :alt: Status
-.. |Python Version| image:: https://img.shields.io/pypi/pyversions/my-interviews-python
-   :target: https://pypi.org/project/my-interviews-python
+.. |Python Version| image:: https://img.shields.io/pypi/pyversions/my-python-kata
+   :target: https://pypi.org/project/my-python-kata
    :alt: Python Version
-.. |License| image:: https://img.shields.io/pypi/l/my-interviews-python
+.. |License| image:: https://img.shields.io/pypi/l/my-python-kata
    :target: https://opensource.org/licenses/MIT
    :alt: License
-.. |Read the Docs| image:: https://img.shields.io/readthedocs/my-interviews-python/latest.svg?label=Read%20the%20Docs
-   :target: https://my-interviews-python.readthedocs.io/
-   :alt: Read the documentation at https://my-interviews-python.readthedocs.io/
-.. |Tests| image:: https://github.com/scalasm/my-interviews-python/workflows/Tests/badge.svg
-   :target: https://github.com/scalasm/my-interviews-python/actions?workflow=Tests
+.. |Read the Docs| image:: https://img.shields.io/readthedocs/my-python-kata/latest.svg?label=Read%20the%20Docs
+   :target: https://my-python-kata.readthedocs.io/
+   :alt: Read the documentation at https://my-python-kata.readthedocs.io/
+.. |Tests| image:: https://github.com/scalasm/my-python-kata/workflows/Tests/badge.svg
+   :target: https://github.com/scalasm/my-python-kata/actions?workflow=Tests
    :alt: Tests
-.. |Codecov| image:: https://codecov.io/gh/scalasm/my-interviews-python/branch/main/graph/badge.svg
-   :target: https://codecov.io/gh/scalasm/my-interviews-python
+.. |Codecov| image:: https://codecov.io/gh/scalasm/my-python-kata/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/scalasm/my-python-kata
    :alt: Codecov
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
    :target: https://github.com/pre-commit/pre-commit
@@ -41,10 +41,9 @@ Disclaimer
 This is second fresh attempt to study Computer Algorithms and Data Structures by following the
 [MIT Course](https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb).
 
-In this repository I'm using Python, in order to also gain some practice!
+In this repository I'm using Python, in order to also gain some practice, like in [Kata](https://en.wikipedia.org/wiki/Kata)!
 
-This is a set of conding exercises that I have done for testing my coding skills for
-interview preparation using Python.
+This is a set of conding exercises that I have done for testing my coding skills  using Python.
 I try to make them as good as possible but I take no responsibility for any problems
 or errors you may incur if you try to use them :)
 
@@ -53,7 +52,7 @@ Features
 
 Arrays and Matrices
 ~~~~~~~~~~~~~~~~~~~
-* [Finding a peak in 1-dimensional and 2-dimensional arrays](./docs/interviews/FindPeak.md).
+* [Finding a peak in 1-dimensional and 2-dimensional arrays](./docs/algorithms/FindPeak.md).
 * Merge of N arrays (lists)
 
 Graphs
@@ -68,11 +67,11 @@ Heap
 Installation
 ------------
 
-You can install *My Interviews Python* via pip_ from PyPI_:
+You can install *My Python Kata* via pip_ from PyPI_:
 
 .. code:: console
 
-   $ pip install my-interviews-python
+   $ pip install my-python-kata
 
 
 Usage
@@ -92,7 +91,7 @@ License
 -------
 
 Distributed under the terms of the `MIT license`_,
-*My Interviews Python* is free and open source software.
+*My Python Kata* is free and open source software.
 
 
 Issues
@@ -112,8 +111,8 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _MIT license: https://opensource.org/licenses/MIT
 .. _PyPI: https://pypi.org/
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-.. _file an issue: https://github.com/scalasm/my-interviews-python/issues
+.. _file an issue: https://github.com/scalasm/my-python-kata/issues
 .. _pip: https://pip.pypa.io/
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
-.. _Usage: https://my-interviews-python.readthedocs.io/en/latest/usage.html
+.. _Usage: https://my-python-kata.readthedocs.io/en/latest/usage.html

@@ -1,1 +1,1 @@
-"""Test suite for the interviews package."""
+"""Test suite for the my_python_kata package."""

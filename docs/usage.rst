@@ -1,6 +1,6 @@
 Usage
 =====
 
-.. click:: interviews.__main__:main
-   :prog: my-interviews-python
+.. click:: my_python_kata.__main__:main
+   :prog: my-python-kata
    :nested: full

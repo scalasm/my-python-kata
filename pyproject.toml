@@ -1,22 +1,22 @@
 [tool.poetry]
-name = "my-interviews-python"
+name = "my-python-kata"
 version = "0.0.0"
-description = "My Interviews Python"
+description = "My Python Kata"
 authors = ["Mario Scalas <mario.scalas@gmail.com>"]
 license = "MIT"
 readme = "README.rst"
-homepage = "https://github.com/scalasm/my-interviews-python"
-repository = "https://github.com/scalasm/my-interviews-python"
-documentation = "https://my-interviews-python.readthedocs.io"
+homepage = "https://github.com/scalasm/my-python-kata"
+repository = "https://github.com/scalasm/my-python-kata"
+documentation = "https://my-python-kata.readthedocs.io"
 packages = [
-    { include = "interviews", from = "src" },
+    { include = "my_python_kata", from = "src" },
 ]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
 ]
 
 [tool.poetry.urls]
-Changelog = "https://github.com/scalasm/my-interviews-python/releases"
+Changelog = "https://github.com/scalasm/my-python-kata/releases"
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -52,7 +52,7 @@ bandit = "1.7.2"
 pytest-mock = "^3.7.0"
 
 [tool.poetry.scripts]
-my-interviews-python = "interviews.__main__:main"
+my-python-kata = "my_python_kata.__main__:main"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
@@ -60,7 +60,7 @@ tests = ["tests", "*/tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["interviews"]
+source = ["my_python_kata"]
 
 [tool.coverage.report]
 show_missing = true

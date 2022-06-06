@@ -4,7 +4,7 @@ from typing import List
 from typing import Set
 from typing import TypeVar
 
-from interviews.datastructures.graphs import Graph
+from my_python_kata.datastructures.graphs import Graph
 
 # Generic type for the Graph class
 T = TypeVar("T")

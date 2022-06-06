@@ -1,4 +1,4 @@
-"""Implementation for the coding interview exercises."""
+"""Log configuration for kata exercises."""
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
