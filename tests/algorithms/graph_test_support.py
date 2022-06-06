@@ -1,5 +1,5 @@
 """Shared test resources for testing graphs and related traversal algorithms."""
-from interviews.datastructures.graphs import Graph
+from my_python_kata.datastructures.graphs import Graph
 
 
 def _create_empty_graph() -> Graph[str]:

@@ -6,7 +6,7 @@ import pytest
 
 from ..algorithms.graph_test_support import COMPLEX_GRAPH
 from ..algorithms.graph_test_support import SIMPLE_GRAPH_DIRECTED
-from interviews.datastructures.graphs import Graph
+from my_python_kata.datastructures.graphs import Graph
 
 test_size_data = [(["a", []], 1), (["a", ["b", "c"]], 3)]
 

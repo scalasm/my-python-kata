@@ -5,9 +5,9 @@ from typing import Optional
 
 import pytest
 
-from interviews.algorithms.find_peak import find_peak_1d
-from interviews.algorithms.find_peak import find_peak_2d
-from interviews.algorithms.find_peak import Peak2D
+from my_python_kata.algorithms.find_peak import find_peak_1d
+from my_python_kata.algorithms.find_peak import find_peak_2d
+from my_python_kata.algorithms.find_peak import Peak2D
 
 find_peak_1d_test_data = [
     ([1, 2, 3, 0], 2, 3),

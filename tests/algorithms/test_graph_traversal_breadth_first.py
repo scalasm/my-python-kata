@@ -7,8 +7,8 @@ from .graph_test_support import COMPLEX_GRAPH
 from .graph_test_support import EMPTY_GRAPH
 from .graph_test_support import ONE_NODE_GRAPH
 from .graph_test_support import SIMPLE_GRAPH
-from interviews.algorithms.graph_traversal import bft
-from interviews.datastructures.graphs import Graph
+from my_python_kata.algorithms.graph_traversal import bft
+from my_python_kata.datastructures.graphs import Graph
 
 test_bft_data = [
     (EMPTY_GRAPH, "0", True, set()),

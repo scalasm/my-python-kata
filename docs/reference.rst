@@ -2,8 +2,8 @@ Reference
 =========
 
 
-interviews
-----------
+MyPythonKata
+------------
 
-.. automodule:: interviews
+.. automodule:: MyPythonKata
    :members:

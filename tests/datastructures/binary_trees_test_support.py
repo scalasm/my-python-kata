@@ -1,7 +1,7 @@
 """Test support for binary trees."""
 from __future__ import annotations
 
-from interviews.datastructures.binary_trees import Node
+from my_python_kata.datastructures.binary_trees import Node
 
 TestNode = Node[str, str]
 

@@ -2,7 +2,7 @@
 import pytest
 from click.testing import CliRunner
 
-from interviews import __main__
+from my_python_kata import __main__
 
 
 @pytest.fixture

@@ -3,7 +3,7 @@ from typing import List
 
 import pytest
 
-from interviews.datastructures.heaps import MaxHeap
+from my_python_kata.datastructures.heaps import MaxHeap
 
 max_heap_heapify_test_data = [
     ([3, 9, 2, 1, 4, 5], [9, 4, 5, 1, 3, 2]),
