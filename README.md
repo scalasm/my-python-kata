@@ -21,13 +21,34 @@
 [pre-commit]: https://github.com/pre-commit/pre-commit
 [black]: https://github.com/psf/black
 
+## Disclaimer
+
+This is second fresh attempt to study Computer Algorithms and Data Structures by following the
+[MIT Course](https://www.youtube.com/watch?v=HtSuA80QTyo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb).
+
+In this repository I'm using Python, in order to also gain some practice, like in [Kata](https://en.wikipedia.org/wiki/Kata)! I try to make them as good as possible but I take no responsibility for any problems
+or errors you may incur if you try to use them :)
+
 ## Features
 
-- TODO
+### Arrays and Matrices
+* [Finding peaks in arrays](./docs/algorithms/FindPeak.md), both 1-dimensional and 2-dimensional arrays.
+* Merge of N arrays (lists)
+
+### Graphs
+* Graph (using adjacency lists for its implementation)
+* Breadth-first Traversal (BFT)
+
+### Heap
+* MaxHeap and basic operations
 
 ## Requirements
 
-- TODO
+- Python 3.10
+- Poetry 1.1.13 or better
+- Nox 1.0.1
+
+As alternative, you can use the bundled remote container configuration for Visual Studio Code.
 
 ## Installation
 
@@ -39,7 +60,7 @@ $ pip install my-python-kata
 
 ## Usage
 
-Please see the [Command-line Reference] for details.
+Open this project in Visual Studio Code with remote container extenstion and have fun :)
 
 ## Contributing
 
