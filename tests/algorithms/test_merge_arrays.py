@@ -5,6 +5,7 @@ import pytest
 
 from my_python_kata.algorithms.merge_arrays import merge_arrays
 
+
 merge_arrays_test_data = [
     (
         [

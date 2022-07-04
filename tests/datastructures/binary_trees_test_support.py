@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from my_python_kata.datastructures.binary_trees import Node
 
+
 TestNode = Node[str, str]
 
 

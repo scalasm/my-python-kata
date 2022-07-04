@@ -32,15 +32,18 @@ or errors you may incur if you try to use them :)
 ## Features
 
 ### Arrays and Matrices
-* [Finding peaks in arrays](./docs/algorithms/FindPeak.md), both 1-dimensional and 2-dimensional arrays.
-* Merge of N arrays (lists)
+
+- [Finding peaks in arrays](./docs/algorithms/FindPeak.md), both 1-dimensional and 2-dimensional arrays.
+- Merge of N arrays (lists)
 
 ### Graphs
-* Graph (using adjacency lists for its implementation)
-* Breadth-first Traversal (BFT)
+
+- Graph (using adjacency lists for its implementation)
+- Breadth-first Traversal (BFT)
 
 ### Heap
-* MaxHeap and basic operations
+
+- MaxHeap and basic operations
 
 ## Requirements
 

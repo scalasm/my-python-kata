@@ -1,8 +1,9 @@
 """Find peaks in unidimensional and bidimensional arrays."""
 from dataclasses import dataclass
-from typing import cast
 from typing import List
 from typing import Optional
+from typing import cast
+
 
 # Findind a peak in 1-dimensional and 2-dimensional arrays.
 # For 1-dimensional arrays, complexity is O(lg2n)

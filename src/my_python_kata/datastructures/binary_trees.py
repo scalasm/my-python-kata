@@ -6,6 +6,7 @@ from typing import Callable
 from typing import Generic
 from typing import TypeVar
 
+
 # Key type, we only support int or strings (easier for our implementation)
 K = TypeVar("K", int, str)
 

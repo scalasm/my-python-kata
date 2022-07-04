@@ -5,6 +5,7 @@ from typing import Generic
 from typing import List
 from typing import TypeVar
 
+
 # Generic type for the Graph class
 T = TypeVar("T")
 

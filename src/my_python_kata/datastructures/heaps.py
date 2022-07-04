@@ -1,10 +1,10 @@
 """Heap data-structures."""
 import logging
-from typing import cast
 from typing import Generic
 from typing import List
 from typing import Optional
 from typing import TypeVar
+from typing import cast
 
 
 # Generic data type per items in a data page

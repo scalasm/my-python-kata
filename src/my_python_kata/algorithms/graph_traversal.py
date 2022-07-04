@@ -6,6 +6,7 @@ from typing import TypeVar
 
 from my_python_kata.datastructures.graphs import Graph
 
+
 # Generic type for the Graph class
 T = TypeVar("T")
 
