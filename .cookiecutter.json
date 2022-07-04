@@ -1,0 +1,13 @@
+{
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "Mario Scalas",
+  "copyright_year": "2022",
+  "development_status": "Development Status :: 3 - Alpha",
+  "email": "mario.scalas@gmail.com",
+  "friendly_name": "My Python Kata",
+  "github_user": "scalasm",
+  "license": "MIT",
+  "package_name": "my_python_kata",
+  "project_name": "my-python-kata",
+  "version": "0.0.0"
+}
