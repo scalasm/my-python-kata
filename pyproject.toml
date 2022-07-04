@@ -58,7 +58,7 @@ source = ["my_python_kata", "tests"]
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 100
+fail_under = 90
 
 [tool.isort]
 profile = "black"
