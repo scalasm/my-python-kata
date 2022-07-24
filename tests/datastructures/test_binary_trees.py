@@ -11,10 +11,10 @@ from my_python_kata.datastructures.binary_trees import visit_in_order
 from my_python_kata.datastructures.binary_trees import visit_post_order
 from my_python_kata.datastructures.binary_trees import visit_pre_order
 
-from .binary_trees_test_support import EMPTY_BINARY_TREE
-from .binary_trees_test_support import SINGLE_NODE_BINARY_TREE
-from .binary_trees_test_support import THREE_NODES_BINARY_TREE
-from .binary_trees_test_support import TestNode
+from ..shared.binary_trees_test_support import EMPTY_BINARY_TREE
+from ..shared.binary_trees_test_support import SINGLE_NODE_BINARY_TREE
+from ..shared.binary_trees_test_support import THREE_NODES_BINARY_TREE
+from ..shared.binary_trees_test_support import TestNode
 
 
 test_create_node_data = [

@@ -6,10 +6,10 @@ import pytest
 from my_python_kata.algorithms.graph_traversal import bft
 from my_python_kata.datastructures.graphs import Graph
 
-from .graph_test_support import COMPLEX_GRAPH
-from .graph_test_support import EMPTY_GRAPH
-from .graph_test_support import ONE_NODE_GRAPH
-from .graph_test_support import SIMPLE_GRAPH
+from ..shared.graph_test_support import COMPLEX_GRAPH
+from ..shared.graph_test_support import EMPTY_GRAPH
+from ..shared.graph_test_support import ONE_NODE_GRAPH
+from ..shared.graph_test_support import SIMPLE_GRAPH
 
 
 test_bft_data = [
