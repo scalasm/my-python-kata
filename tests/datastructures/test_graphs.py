@@ -129,6 +129,9 @@ def test_set_value() -> None:
 
     assert "0" not in graph._nodes_data
 
+    graph.set_data("not-present", None)
+    assert "not-present" not in graph._nodes_data
+
 
 def test_get_value() -> None:
     graph = ONE_NODE_GRAPH

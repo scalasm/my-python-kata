@@ -195,7 +195,7 @@ def from_list(entries: list[GraphDefEntry[K]]) -> Graph[K, T]:
         if n_parameters == 1:
             source_node: K = entry[0]
             graph.add_node(source_node)
-        elif n_parameters > 1:
+        else:
             source_node = entry[0]
             # Disabled MyPy check because of
             # https://github.com/python/mypy/issues/1178
