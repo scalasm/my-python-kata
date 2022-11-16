@@ -14,7 +14,7 @@ merge_arrays_test_data = [
         ],
         [0, 1, 3, 5, 6, 7, 7, 8, 8, 10],
     ),
-    # Inlcude empty array
+    # Include empty array
     (
         [
             [1, 5],
@@ -33,6 +33,8 @@ merge_arrays_test_data = [
     ),
     # Single array
     ([[1, 2, 3]], [1, 2, 3]),
+    # No arrays at all
+    ([], []),
 ]
 
 
