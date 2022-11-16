@@ -1,21 +1,18 @@
 """Graph traversal algorithms."""
 from typing import Callable
-from typing import List
-from typing import Set
-from typing import TypeVar
 
 from my_python_kata.datastructures.graphs import Graph
-
-
-# Generic type for the Graph class
-T = TypeVar("T")
+from my_python_kata.datastructures.graphs import K
+from my_python_kata.datastructures.graphs import T
 
 
 # Action callback is provided for customizing behavior when visiting nodes
-GraphActionCallback = Callable[[T], bool]
+GraphActionCallback = Callable[[K], bool]
 
 
-def bft(graph: Graph[T], start_node: T, on_node_action: GraphActionCallback[T]) -> None:
+def bft(
+    graph: Graph[K, T], start_node: K, on_node_action: GraphActionCallback[K]
+) -> None:
     """Breadt-First traversal.
 
     Performs Breadth-First Traversal of the given graph, starting from the
@@ -32,8 +29,8 @@ def bft(graph: Graph[T], start_node: T, on_node_action: GraphActionCallback[T]) 
     if not graph.contains(start_node):
         return
 
-    fringe_nodes: List[T] = [start_node]
-    visited_nodes: Set[T] = set()
+    fringe_nodes: list[K] = [start_node]
+    visited_nodes: set[K] = set()
 
     while fringe_nodes:
         current_node = fringe_nodes.pop(0)

@@ -1,48 +1,59 @@
 """Shared test resources for testing graphs and related traversal algorithms."""
+from my_python_kata.datastructures.graphs import Edge
 from my_python_kata.datastructures.graphs import Graph
+from my_python_kata.datastructures.graphs import from_list
 
 
-def _create_empty_graph() -> Graph[str]:
-    return Graph[str]()
+TestGraph = Graph[str, str]
+TestEdge = Edge[str]
 
 
-def _create_one_node_graph() -> Graph[str]:
-    graph = Graph[str]()
-
-    graph.connect("0", [])
-
-    return graph
+def _create_empty_graph() -> TestGraph:
+    return TestGraph()
 
 
-def _create_simple_graph() -> Graph[str]:
-    graph = Graph[str]()
-
-    graph.connect("0", ["1", "2", "3"])
-
-    return graph
+def _create_one_node_graph() -> TestGraph:
+    # Disabled MyPy check because of https://github.com/python/mypy/issues/1178
+    return from_list([("0")])  # type: ignore[list-item]
 
 
-def _create_simple_graph_directed() -> Graph[str]:
-    graph = Graph[str]()
+def _create_simple_graph() -> TestGraph:
+    return from_list(
+        [
+            ("0", "1"),
+            ("0", "2"),
+            ("0", "3"),
+        ]
+    )
 
-    graph.connect("0", ["1", "2", "3"], bidirectional=False)
 
-    return graph
+def _create_simple_graph_directed() -> TestGraph:
+    return from_list(
+        [
+            ("0", "1", 1.0, False),
+            ("0", "2", 1.0, False),
+            ("0", "3", 1.0, False),
+        ]
+    )
 
 
-def _create_complex_graph() -> Graph[str]:
-    graph = Graph[str]()
-
-    graph.connect("0", ["7", "9", "11"])
-    graph.connect("9", ["10", "8"])
-    graph.connect("9", ["10", "8"])
-    graph.connect("8", ["12"])
-    graph.connect("12", ["2"])
-    graph.connect("7", ["11", "6"])
-    graph.connect("3", ["2", "4"])
-    graph.connect("6", ["5"])
-
-    return graph
+def _create_complex_graph() -> TestGraph:
+    return from_list(
+        [
+            ("0", "7"),
+            ("0", "9"),
+            ("0", "11"),
+            ("9", "10"),
+            ("9", "8"),
+            ("8", "12"),
+            ("12", "2"),
+            ("7", "11"),
+            ("7", "6"),
+            ("3", "2"),
+            ("3", "4"),
+            ("6", "5"),
+        ]
+    )
 
 
 EMPTY_GRAPH = _create_empty_graph()
