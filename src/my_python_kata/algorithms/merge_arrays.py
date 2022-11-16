@@ -1,20 +1,25 @@
 """Module that exposes how to merge two lists into one single list."""
-from typing import List
 
 
-def merge_arrays(arrays: List[List[int]]) -> List[int]:
+def merge_arrays(arrays: list[list[int]]) -> list[int]:
     """Given n sorted arrays as input, generate a single sorted array as output."""
-    merged: List[int] = []
-    for array in arrays:
-        merged = _merge_two_arrays(merged, array)
+    if not arrays:
+        return []
+
+    if len(arrays) == 1:
+        return arrays[0]
+
+    merged: list[int] = arrays[0].copy()
+    for i in range(1, len(arrays)):
+        merged = _merge_two_arrays(merged, arrays[i])
 
     return merged
 
 
-def _merge_two_arrays(first: List[int], second: List[int]) -> List[int]:
+def _merge_two_arrays(first: list[int], second: list[int]) -> list[int]:
     i = 0  # index for first array
     j = 0  # index for second array
-    merged: List[int] = []
+    merged: list[int] = []
 
     while i < len(first) and j < len(second):
         if first[i] <= second[j]:
