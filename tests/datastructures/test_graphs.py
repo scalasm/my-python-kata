@@ -143,26 +143,27 @@ def test_get_value() -> None:
         ([], []),
         ([("a")], []),
         ([("a", "b")], [(TestEdge("a", "b"), DEFAULT_EDGE_WEIGHT)]),
-        # (
-        #     [
-        #         ("a", "b"),
-        #         ("a", "c"),
-        #         ("c", "d"),
-        #     ],
-        #     [
-        #         (TestEdge("a", "b"), DEFAULT_EDGE_WEIGHT),
-        #         (TestEdge("a", "c"), DEFAULT_EDGE_WEIGHT),
-        #         (TestEdge("c", "d"), DEFAULT_EDGE_WEIGHT),
-        #     ],
-        # ),
-        # # You can have two edges connecting the same node pair (bidirectionality)
-        # (
-        #     [("a", "b"), ("b", "a")],
-        #     [
-        #         (TestEdge("a", "b"), DEFAULT_EDGE_WEIGHT),
-        #         (TestEdge("b", "a"), DEFAULT_EDGE_WEIGHT),
-        #     ],
-        # ),
+        (
+            [
+                ("a", "b"),
+                ("a", "c"),
+                ("c", "d"),
+            ],
+            [
+                (TestEdge("a", "b"), DEFAULT_EDGE_WEIGHT),
+                (TestEdge("a", "c"), DEFAULT_EDGE_WEIGHT),
+                (TestEdge("c", "d"), DEFAULT_EDGE_WEIGHT),
+            ],
+        ),
+        # You can have two edges connecting the same node pair
+        # (bidirectionality)
+        (
+            [("a", "b"), ("b", "a")],
+            [
+                (TestEdge("a", "b"), DEFAULT_EDGE_WEIGHT),
+                (TestEdge("b", "a"), DEFAULT_EDGE_WEIGHT),
+            ],
+        ),
     ],
 )
 def test_from_list(
