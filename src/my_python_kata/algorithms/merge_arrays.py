@@ -21,7 +21,10 @@ def _merge_two_arrays(first: list[int], second: list[int]) -> list[int]:
     j = 0  # index for second array
     merged: list[int] = []
 
-    while i < len(first) and j < len(second):
+    n_first = len(first)
+    n_second = len(second)
+
+    while i < n_first and j < n_second:
         if first[i] <= second[j]:
             merged.append(first[i])
             i = i + 1
@@ -30,12 +33,10 @@ def _merge_two_arrays(first: list[int], second: list[int]) -> list[int]:
             j = j + 1
 
     # Copy leftovers
-    while i < len(first):
-        merged.append(first[i])
-        i = i + 1
+    if i < n_first:
+        merged += first[i:n_first]
 
-    while j < len(second):
-        merged.append(second[j])
-        j = j + 1
+    if j < n_second:
+        merged += second[j:n_second]
 
     return merged
