@@ -9,9 +9,9 @@
       // Update 'VARIANT' to pick a Python version: 3, 3.10, 3.9, 3.8, 3.7, 3.6
       // Append -bullseye or -buster to pin to an OS version.
       // Use -bullseye variants on local on arm64/Apple Silicon.
-      "VARIANT": "3.10-buster",
+      "VARIANT": "3.10-bullseye",
       // Options
-      "NODE_VERSION": "16",
+      "NODE_VERSION": "18",
       // Additional Python tools
       "POETRY_VERSION": "1.2.2",
       "NOX_VERSION": "2022.8.7"
@@ -65,7 +65,5 @@
     "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
     // Re-use local Git configuration
     "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
-    // Unqork configuration files on
-    "source=${localEnv:HOME}/.unqork,target=/home/vscode/.unqork,type=bind,consistency=cached"
   ]
 }
