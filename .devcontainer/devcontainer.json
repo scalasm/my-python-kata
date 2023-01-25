@@ -14,7 +14,7 @@
       "NODE_VERSION": "18",
       // Additional Python tools
       "POETRY_VERSION": "1.2.2",
-      "NOX_VERSION": "2022.8.7"
+      "NOX_VERSION": "2022.11.21"
     }
   },
 
