@@ -1,4 +1,5 @@
 """Heap data-structures."""
+
 import logging
 from typing import Generic
 from typing import List

@@ -1,4 +1,5 @@
 """Log configuration for kata exercises."""
+
 import logging
 
 

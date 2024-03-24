@@ -1,4 +1,5 @@
 """Graph traversal algorithms."""
+
 from typing import Callable
 
 from my_python_kata.datastructures.graphs import Graph

@@ -1,4 +1,5 @@
 """Unit tests for arrays merge."""
+
 import pytest
 
 from my_python_kata.algorithms.merge_arrays import merge_arrays

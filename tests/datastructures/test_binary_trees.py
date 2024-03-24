@@ -1,4 +1,5 @@
 """Unit tests for binary_trees module."""
+
 from typing import Callable
 from typing import List
 from typing import Optional

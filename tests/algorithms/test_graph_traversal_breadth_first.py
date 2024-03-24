@@ -1,4 +1,5 @@
 """Unit tests for graph Breadth-First graph traversal."""
+
 import pytest
 
 from my_python_kata.algorithms.graph_traversal import bft

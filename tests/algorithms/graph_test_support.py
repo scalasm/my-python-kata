@@ -1,4 +1,5 @@
 """Shared test resources for testing graphs and related traversal algorithms."""
+
 from my_python_kata.datastructures.graphs import Edge
 from my_python_kata.datastructures.graphs import Graph
 from my_python_kata.datastructures.graphs import from_list

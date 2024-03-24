@@ -1,4 +1,5 @@
 """Unit tests for the find_peak module."""
+
 from typing import List
 from typing import Optional
 from typing import cast

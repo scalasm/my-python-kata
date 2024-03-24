@@ -1,4 +1,5 @@
 """Graph module implemented using adjacency lists."""
+
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import Generic

@@ -1,4 +1,5 @@
 """Find peaks in unidimensional and bidimensional arrays."""
+
 from dataclasses import dataclass
 from typing import List
 from typing import Optional

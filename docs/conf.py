@@ -1,4 +1,5 @@
 """Sphinx configuration."""
+
 project = "My Python Kata"
 author = "Mario Scalas"
 copyright = "2022, Mario Scalas"

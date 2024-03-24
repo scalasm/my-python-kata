@@ -1,4 +1,5 @@
 """Unit tests for the graphs module."""
+
 import pytest
 
 from my_python_kata.datastructures.graphs import DEFAULT_EDGE_WEIGHT
