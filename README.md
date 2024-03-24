@@ -47,9 +47,9 @@ or errors you may incur if you try to use them :)
 
 ## Requirements
 
-- Python 3.10
-- Poetry 1.1.13 or better
-- Nox 1.0.1
+- Python 3.12
+- Poetry 1.8.2 or better
+- Nox 1.0.3
 
 As alternative, you can use the bundled remote container configuration for Visual Studio Code.
 
